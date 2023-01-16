@@ -1,0 +1,17 @@
+<!-- <ul>
+    <li *ngFor ="let book of books">
+        <img [src]="book.coverImage" [class.preview]="previewMode" (click) ="onClickImage(book)">
+      {{ book.authors[0] }}  <strong>{{ book.title }}</strong>
+    </li>
+  </ul> -->
+  <div>
+    <label for="author">Search for Authors:</label>
+    <input [(ngModel)]="searchString" type="text" name="author" id="author" (keypress)="  onSubmit()">
+    <button type="submit" (click)="onSubmit()">Submit</button>
+  </div>
+  <ul>
+    <li *ngFor ="let book of testData">
+        <img [src]="book.coverImage" [class.preview]="book.previewMode" (click) ="onClickImage(book)">
+        {{ book.getAuthorsList() }} <strong>{{ book.title }}</strong>
+    </li>
+  </ul>
